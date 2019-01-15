@@ -13,6 +13,7 @@ import ROGoogleTranslate
 class MemesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var detectedText: UITextView!
+    @IBOutlet weak var downScroll: UIImageView!
     @IBOutlet weak var memeImage: UIImageView!
     @IBOutlet weak var translatedText: UITextView!
     @IBAction func translateButton(_ sender: Any) {

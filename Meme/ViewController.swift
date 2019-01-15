@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let screenSize = UIScreen.main.bounds
+        let screenSize = view.frame
         let screenHeight = screenSize.height
         print(screenHeight)
         return screenHeight
