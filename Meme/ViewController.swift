@@ -10,9 +10,12 @@ import UIKit
 import Firebase
 import ROGoogleTranslate
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var image: UIImageView!
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewCell: UITableViewCell!
+    
     @IBOutlet weak var detectedText: UITextView!
     @IBOutlet weak var translatedText: UITextView!
     @IBAction func translateButton(_ sender: Any) {
@@ -20,17 +23,60 @@ class ViewController: UIViewController {
 
     }
     
+    var memes: [Meme] = []
+    
+    func createMemeArray() -> [Meme] {
+        var tempMemes: [Meme] = []
+
+        for i in 1..<4 {
+            let name: String = "meme" + i.description
+            let meme = Meme(memeImage: UIImage(named: name)!, detectedText: textDetect(image: UIImage(named: name)!), translatedText: "")
+            tempMemes.append(meme)
+
+        }
+        return tempMemes
+
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return memes.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+//        cell.memeImage = memes[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let screenSize = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+        
+        return screenHeight
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        textDetect()
+//        createMemeArray()
+//        textDetect()
+        self.tableView.register(MemesTableViewCell.self, forCellReuseIdentifier: "cell")
+
     }
 
-    func textDetect(){
+    func textDetect(image: UIImage) -> String {
 
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
-        let image = VisionImage(image: self.image.image!)
+        let image = VisionImage(image: self.memeImage.image!)
+
 
         textRecognizer.process(image) { result, error in
             guard error == nil, let result = result else {
@@ -42,9 +88,6 @@ class ViewController: UIViewController {
             let resultText = result.text
             print("recognized text")
             print(resultText)
-            self.detectedText.text = resultText
-
-            self.translate(source: resultText)
         }
     }
 

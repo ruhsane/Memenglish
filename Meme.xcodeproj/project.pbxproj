@@ -15,6 +15,9 @@
 		9D997FB221E71E720093D1F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D997FB121E71E720093D1F3 /* Assets.xcassets */; };
 		9D997FB521E71E720093D1F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D997FB321E71E720093D1F3 /* LaunchScreen.storyboard */; };
 		9D997FC121E7DC250093D1F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D997FC021E7DC250093D1F3 /* GoogleService-Info.plist */; };
+		9D997FC321ED18F30093D1F3 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D997FC221ED18F30093D1F3 /* MainTableViewController.swift */; };
+		9D997FC521ED25CB0093D1F3 /* MemesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D997FC421ED25CB0093D1F3 /* MemesTableViewCell.swift */; };
+		9D997FC921EDBD1D0093D1F3 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D997FC821EDBD1D0093D1F3 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		9D997FB421E71E720093D1F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D997FB621E71E720093D1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D997FC021E7DC250093D1F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9D997FC221ED18F30093D1F3 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		9D997FC421ED25CB0093D1F3 /* MemesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesTableViewCell.swift; sourceTree = "<group>"; };
+		9D997FC821EDBD1D0093D1F3 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		BB07BB4C0F6BADC106C39086 /* Pods-Meme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meme/Pods-Meme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +91,9 @@
 				9D997FA721E71E710093D1F3 /* AppDelegate.swift */,
 				9D997FA921E71E710093D1F3 /* ViewController.swift */,
 				9D997FAB21E71E710093D1F3 /* Main.storyboard */,
+				9D997FC821EDBD1D0093D1F3 /* Meme.swift */,
+				9D997FC221ED18F30093D1F3 /* MainTableViewController.swift */,
+				9D997FC421ED25CB0093D1F3 /* MemesTableViewCell.swift */,
 				9D997FB121E71E720093D1F3 /* Assets.xcassets */,
 				9D997FB321E71E720093D1F3 /* LaunchScreen.storyboard */,
 				9D997FB621E71E720093D1F3 /* Info.plist */,
@@ -238,9 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D997FC321ED18F30093D1F3 /* MainTableViewController.swift in Sources */,
 				9D997FAA21E71E710093D1F3 /* ViewController.swift in Sources */,
 				9D997FA821E71E710093D1F3 /* AppDelegate.swift in Sources */,
+				9D997FC921EDBD1D0093D1F3 /* Meme.swift in Sources */,
 				9D997FB021E71E710093D1F3 /* Meme.xcdatamodeld in Sources */,
+				9D997FC521ED25CB0093D1F3 /* MemesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
