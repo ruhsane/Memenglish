@@ -88,8 +88,8 @@
 		9D997FA621E71E710093D1F3 /* Meme */ = {
 			isa = PBXGroup;
 			children = (
-				9D997FA721E71E710093D1F3 /* AppDelegate.swift */,
 				9D997FA921E71E710093D1F3 /* ViewController.swift */,
+				9D997FA721E71E710093D1F3 /* AppDelegate.swift */,
 				9D997FAB21E71E710093D1F3 /* Main.storyboard */,
 				9D997FC821EDBD1D0093D1F3 /* Meme.swift */,
 				9D997FC221ED18F30093D1F3 /* MainTableViewController.swift */,

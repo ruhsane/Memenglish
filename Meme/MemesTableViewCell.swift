@@ -21,6 +21,13 @@ class MemesTableViewCell: UITableViewCell {
     }
 
 
+    func setMeme(meme: Meme) {
+        memeImage.image = meme.memeImage
+        detectedText.text = meme.detectedText ?? "loading"
+        translatedText.text = meme.translatedText ?? "loading"
+    }
+    
+    
     func translate(source: String) {
         let translator = ROGoogleTranslate()
         translator.apiKey = "AIzaSyBrwV0kCyy5LcowEbdHePx2roWE1pPI1Wk" // Add your API Key here

@@ -11,10 +11,10 @@ import UIKit
 
 class Meme {
     var memeImage: UIImage
-    var detectedText: String
-    var translatedText: String
+    var detectedText: String?
+    var translatedText: String?
     
-    init(memeImage: UIImage, detectedText: String, translatedText: String) {
+    init(memeImage: UIImage, detectedText: String?, translatedText: String?) {
         self.memeImage = memeImage
         self.detectedText = detectedText
         self.translatedText = translatedText
