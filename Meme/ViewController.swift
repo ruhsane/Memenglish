@@ -25,6 +25,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var memes: [Meme] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        DispatchQueue.global(qos: .background).async {
+            self.fetchMemes { [weak self] (fetchedMemes) in
+                self?.memes = fetchedMemes
+                self?.translateMemes()
+                
+                DispatchQueue.main.async {
+                    //reload the table view with the images from each meme
+                    self?.tableView.reloadData()
+                    
+                }
+            }
+        }
+    }
+        
     func fetchMemes(completion: ([Meme]) -> Void) {
         var tempMemes: [Meme] = []
         
@@ -106,21 +123,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return screenHeight
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        fetchMemes { [weak self] (fetchedMemes) in
-            self?.memes = fetchedMemes
-            
-            //reload the table view with the images from each meme
-            self?.tableView.reloadData()
-            
-            self?.translateMemes()
-        }
-        //        textDetect()
-        //        self.tableView.register(MemesTableViewCell.self, forCellReuseIdentifier: "cell")
-        
-    }
     
     func translateMemes() {
         
