@@ -1,5 +1,7 @@
 # Memenglish
 
+This repo is the old version of Memenglish. Moved to new address due to github issues: https://github.com/ruhsane/Memenglish-app
+
 ## Description
 Learn English With Memes! The app automatically detects the text in the meme image, and translates into the language chosen.
 
